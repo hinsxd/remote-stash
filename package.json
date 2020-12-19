@@ -1,0 +1,24 @@
+{
+  "name": "remote-stash",
+  "version": "0.0.1",
+  "description": "Stash your changes to remote",
+  "author": "Alvin Li",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --declaration ",
+    "start": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7.2.6",
+    "@types/node": "^14.14.14",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.3"
+  }
+}
