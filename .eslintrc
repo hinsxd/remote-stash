@@ -1,20 +1,27 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier", "@typescript-eslint", "unused-imports"],
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
+
   "rules": {
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"],
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": 1,
-    "@typescript-eslint/no-inferrable-types": [
-      "warn", {
-        "ignoreParameters": true
-      }
-    ],
-    "@typescript-eslint/no-unused-vars": "warn"
+    "prettier/prettier": "warn", // style error
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Explicit function return type
+    "@typescript-eslint/no-var-requires": "off", // Using require('...')
+    "@typescript-eslint/no-inferrable-types": "off", // typing default variables
+    "@typescript-eslint/no-explicit-any": "warn", // : any
+    "prefer-const": "warn", // `let` but does not change variable
+    "@typescript-eslint/no-empty-function": "off", // () => {}
+    "@typescript-eslint/ban-ts-comment": "off", // allow ts-ignore
+    "@typescript-eslint/no-unused-vars": "off", // Unused vars, including import
+    "unused-imports/no-unused-imports-ts": "error",
+    "unused-imports/no-unused-vars-ts": "warn"
   }
 }
