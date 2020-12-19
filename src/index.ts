@@ -1,3 +1,6 @@
-function main() {}
+import { program } from "commander";
 
-export default main;
+program.name("remote-stash");
+program.command("test").action(() => {});
+
+program.parse(process.argv);
