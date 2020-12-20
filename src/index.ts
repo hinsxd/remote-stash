@@ -26,6 +26,10 @@ program
   .command("push [message]", { isDefault: true })
   .action(async (message: string = "") => {
     try {
+      const status = await exec("git status").then((r) => r.stdout.trim());
+      if (status.includes("nothing to commit")) {
+        process.exit(0);
+      }
       const branchName = await exec("git branch --show-current").then((r) =>
         r.stdout.trim()
       );
