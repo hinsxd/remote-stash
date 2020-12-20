@@ -24,7 +24,7 @@ program.name("remote-stash");
 
 program
   .command("push [message]", { isDefault: true })
-  .action(async (message?: string) => {
+  .action(async (message: string = "") => {
     const branchName = await exec("git branch --show-current").then((r) =>
       r.stdout.trim()
     );
