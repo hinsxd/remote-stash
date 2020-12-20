@@ -57,7 +57,10 @@ program
 
     await exec(`git checkout -b ${newBranchName}`);
     await exec("git add -A");
-    await exec(`git commit -m "Remote stash #${newStashNum} - ${message}"`);
+    await exec(
+      `git commit -m "Remote stash #${newStashNum} - ${message}" --no-verify`
+    );
+    await exec(`git checkout ${baseBranch}"`);
   });
 
 program.parse(process.argv);
